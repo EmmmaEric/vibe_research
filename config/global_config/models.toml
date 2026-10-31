@@ -1,0 +1,25 @@
+# Model backends. Endpoints live in backends.toml; API keys come from the
+# environment only and are never written here or into any run artifact.
+
+[agent]
+backend = "api"
+# "simulated" = offline deterministic heuristics (no model, no network).
+# "anthropic" = a real Claude model; needs ANTHROPIC_API_KEY or `ant auth login`.
+provider = "simulated"
+model = "claude-opus-5-5"
+effort = "medium"
+timeout_s = 180
+
+# Teacher-Student review is OPTIONAL in the spec and is NOT implemented here.
+# The section is kept so enabling it is an explicit, visible change rather than
+# a silent default.
+[agent.teacher]
+enabled = false
+
+[agent.student]
+enabled = false
+
+[judge]
+# "mock" = offline deterministic; "llm" = real model; "jev" = not implemented.
+mode = "mock"
+provider = "simulated"

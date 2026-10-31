@@ -1,0 +1,17 @@
+# Demo A: an algorithm goal whose验证 can actually be executed locally.
+# Overlays config/global_config/*.toml; arrays replace, tables merge.
+
+[target]
+maturity_level = "R5_GOAL_ACHIEVED"
+
+[strategy]
+mode = "adaptive"
+
+[budget]
+max_iterations = 4
+
+[experiment]
+# Real execution -- the only adapter that can exceed R3.
+adapter = "pytest"
+project_dir = "examples/algorithm_idea"
+test_target = "tests"

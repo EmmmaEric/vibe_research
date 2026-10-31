@@ -1,0 +1,10 @@
+# Permissions and sandbox policy.
+
+[security]
+# Actions with real-world effect (device control, payment, publication,
+# contacting real users) are ALWAYS gated regardless of this setting.
+allow_external_write = false
+# Stages needing explicit approval before they run, e.g. ["experiment"].
+require_approval = []
+# Offline mode: no network tool is constructed at all.
+offline = false

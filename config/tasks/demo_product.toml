@@ -1,0 +1,16 @@
+# Demo B: a product goal that CANNOT be fully validated here. The run should
+# stop at R2_DESIGNED or INCONCLUSIVE with an external validation plan, and
+# must not claim market demand was verified.
+
+[target]
+maturity_level = "R4_VALIDATED"
+
+[strategy]
+mode = "tournament"
+
+[budget]
+max_iterations = 4
+
+[experiment]
+# Requires real users; the adapter refuses to simulate them.
+adapter = "manual"

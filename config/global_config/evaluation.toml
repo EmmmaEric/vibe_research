@@ -1,0 +1,9 @@
+# Scoring engine behaviour. Rubric anchors themselves live in code
+# (evaluation/rubric.py) so their meaning cannot drift between configs.
+
+[evaluation]
+mode = "goal_aware"
+weighting = "normalized_mcda"
+compare_top_k = 3
+pairwise_reverse_order = true
+require_independent_validation = true

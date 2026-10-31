@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "universal-research-harness"
+version = "0.1.0"
+description = "Domain-agnostic autonomous research harness: goal -> evidence -> competing proposals -> deterministic scoring -> test plan -> experiment -> independent validation -> report"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+llm = ["anthropic>=1.0"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+research-harness = "research_harness.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Only collect test *functions*; the package has domain classes named Test*
+# (TestPlan, TestCase, TestDesigner) that are not test classes.
+python_classes = []
+markers = [
+    "requires_network: tests that need real network/API credentials (deselected by default)",
+]
+addopts = "-m 'not requires_network'"
+
+[tool.setuptools.package-data]
+research_harness = ["fixtures/*.jsonl", "fixtures/*.md"]

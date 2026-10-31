@@ -1,0 +1,9 @@
+# Evidence retrieval.
+
+[search]
+# fixture = bundled SIMULATED demo evidence (offline)
+# local   = real local documents
+# web     = real web search (needs credentials)
+# all     = every available backend
+# none    = gather nothing, and say so
+mode = "fixture"

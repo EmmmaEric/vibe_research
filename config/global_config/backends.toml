@@ -1,0 +1,6 @@
+# Endpoints and which environment variable holds each key. The KEY ITSELF is
+# never stored here -- only the name of the variable to read it from.
+
+[backends]
+base_url = "https://api.anthropic.com"
+api_key_env = "ANTHROPIC_API_KEY"

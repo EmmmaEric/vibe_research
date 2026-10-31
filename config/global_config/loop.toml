@@ -1,0 +1,22 @@
+# Research depth, budget and strategy.
+
+[target]
+# R1_RESEARCHED | R2_DESIGNED | R3_PROTOTYPED | R4_VALIDATED | R5_GOAL_ACHIEVED
+maturity_level = "R3_PROTOTYPED"
+
+[budget]
+# Every run is bounded. There is no unlimited mode.
+max_iterations = 8
+max_wall_time_minutes = 60
+max_cost_usd = 20.0
+max_experiments = 6
+max_repairs = 2
+max_no_gain = 2
+
+[strategy]
+# goal_only  = single general agent + tools + independent validation (baseline)
+# adaptive   = router may spawn subagents / run tournaments on demand
+# tournament = always compete candidates head to head
+mode = "adaptive"
+# Point gap below which the top two candidates count as contested.
+tradeoff_threshold = 8.0
